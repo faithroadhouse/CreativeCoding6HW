@@ -1,0 +1,87 @@
+<html lang="en">
+
+<head>
+    
+    <title>Subscribe for more games</title>
+    <style>
+        h1 {
+            color: rgb(36, 0, 128);
+        
+        }
+        .container {
+            padding: 15px;
+            width: 400px;
+        }
+        
+        label,
+        input {
+            margin-bottom: 10px;
+        }
+        
+        button {
+            float: right;
+            margin-right: 10px;
+            background-color: rgb(144, 157, 203);
+        }
+    </style>
+     <link rel="stylesheet" href="mainstyle.css"> 
+</head>
+
+
+<body>
+
+        <h1>Subscribe for More Games</h1>
+        <br><br>
+        <div class="container">
+            <div>
+                <label>Name:</label>
+                <br>
+                <input type="text" size="40">
+            </div>
+            <div>
+                <label>Phone number:</label>
+                <input type="text"
+                    id="number" size="40">
+                <span id="error"></span>
+            </div>
+            <button type="submit"
+                    onclick="errorMessage()">
+                Submit
+            </button>
+        </div>
+
+</body>
+<br>
+
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Validation</title>
+    <script>
+        function errorMessage() {
+            var input = document.getElementById("number");
+            var error = document.getElementById("error");
+
+            if (isNaN(parseFloat(input.value))) {
+                error.innerHTML = "<span style='color: red;'>Please enter a valid number</span>";
+                input.classList.add("red-border"); // Optional: Add red border
+            } else {
+                error.innerHTML = ""; // Clear error message
+                input.classList.remove("red-border"); // Remove red border
+            }
+        }
+    </script>
+    <style>
+        .red-border {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="number" oninput="errorMessage()">
+    <div id="error"></div>
+
+</body>
+
+
+</html>    
